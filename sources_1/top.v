@@ -38,7 +38,6 @@ output dp
     reg [3:0] hex_to_decode;
     reg [3:0] active_anode;
     wire debounce_startstop;
-    wire [15:0] displayval;
     wire debounce_reset;
     debouncer db_startstop (
         .clk(clk),
