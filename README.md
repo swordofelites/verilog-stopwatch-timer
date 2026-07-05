@@ -57,7 +57,7 @@ The core logic and peripheral modules have been thoroughly verified via behavior
 * tb_debouncer.v: Button debouncer testbench.  
 
 # Development Enviroment
-* Synthesis & Simulation: Xilinx Vivado 2026.1
+* Synthesis, Simulation, and Programming: Xilinx Vivado 2026.1
 * Diagramming: Draw.io
 * Target Device: Digilent Basys 3 (Artix-7 XC7A35TCPG236-1)
 * Hardware Provisions and Lending: Department of Electrical and Computer Engineering at the Universty of Texas at Austin
