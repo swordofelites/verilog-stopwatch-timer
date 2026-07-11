@@ -1,8 +1,8 @@
 # verilog-stopwatch-timer
-A programmable digital stopwatch and timer the Digilent Basys 3 Artix-7 FPGA written in Verilog. Originally made for my digital logic design final lab (Spring 2026) but revised during Summer 2026 after TA's feedback. Outputs via the Basys 3's four 7-segment displays with a resolution of 10 miliseconds. System features hardware debouncing, clock division for multiplexed displays, and 4 operating modes. 
+A programmable digital stopwatch and timer for the Digilent Basys 3 Artix-7 FPGA written in Verilog. Originally made for my digital logic design final lab (Spring 2026) but revised during Summer 2026 after TA's feedback. Outputs via the Basys 3's four 7-segment displays with a resolution of 10 milliseconds. System features hardware debouncing, clock division for multiplexed displays, and 4 operating modes. 
 
 # Features and Modes
-The stopwatch/timer supports four modes seleted via hardware switches V16 and V17:
+The stopwatch/timer supports four modes selected via hardware switches V16 and V17:
 * Mode 00 (Count Up): Functions as a standard stopwatch, counting up from 00.00 to 99.99.
 * Mode 01 (Count Down): Functions as a timer, counting down from 99.99 to 00.00.
 * Mode 10 (Preset Count Up): Counts up from an externally loaded value defined by the 8 preset switches.
@@ -40,7 +40,7 @@ The core logic and peripheral modules have been thoroughly verified via behavior
 # Core Logic Loading States (tb_stopwatch)
 <img width="1279" height="799" alt="Screenshot 2026-07-05 053514" src="https://github.com/user-attachments/assets/6604040b-978e-4f5a-ab7d-44f20c699e22" />
 
-# Top-level Dispaly Multiplexing (tb_top)
+# Top-level Display Multiplexing (tb_top)
 <img width="1080" height="683" alt="Screenshot 2026-06-30 034323" src="https://github.com/user-attachments/assets/b62f7c4c-4631-48a4-9e62-4032c4a0a109" />
 
 # Project Structure
@@ -56,8 +56,8 @@ The core logic and peripheral modules have been thoroughly verified via behavior
 * tb_stopwatch.v: Core stopwatch logic testbench.
 * tb_debouncer.v: Button debouncer testbench.  
 
-# Development Enviroment
+# Development Environment
 * Synthesis, Simulation, and Programming: Xilinx Vivado 2026.1
 * Diagramming: Draw.io
 * Target Device: Digilent Basys 3 (Artix-7 XC7A35TCPG236-1)
-* Hardware Provisions and Lending: Department of Electrical and Computer Engineering at the Universty of Texas at Austin
+* Hardware Provisions and Lending: Department of Electrical and Computer Engineering at the University of Texas at Austin
