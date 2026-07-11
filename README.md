@@ -30,9 +30,9 @@ The system was designed using a High-Level State Machine (HLSM) mapped to a cust
 
 ### Simulations and Waveform
 The core logic and peripheral modules have been thoroughly verified via behavioral simulation. The following testbenches were used to validate the design prior to synthesis:
-* Debouncer Verification (tb_debouncer.v): Simulates mechanical button bounce by asserting rapid high/low transitions for press and release events, verifying that the 1,000,000-cycle delay correctly filters out the noise to produce a single, clean pulse. 
-* Core Logic Verification (tb_stopwatch.v): Directly tests the stopwatch.v FSM and datapath. It validates the BCD counting logic, state transitions, and preset loading by cycling through all four operational modes (00, 01, 10, 11) using simulated button pulses. 
-* Top-Level Integration (tb_top.v): Validates the entire system wrapper, ensuring that the debounced inputs correctly drive the stopwatch core, and that the resulting 16-bit time values are properly multiplexed to the 7-segment display outputs (seg, an, and dp).
+* Debouncer Verification (`tb_debouncer.v`): Simulates mechanical button bounce by asserting rapid high/low transitions for press and release events, verifying that the 1,000,000-cycle delay correctly filters out the noise to produce a single, clean pulse. 
+* Core Logic Verification (`tb_stopwatch.v`): Directly tests the `stopwatch.v` FSM and datapath. It validates the BCD counting logic, state transitions, and preset loading by cycling through all four operational modes (00, 01, 10, 11) using simulated button pulses. 
+* Top-Level Integration (`tb_top.v`): Validates the entire system wrapper, ensuring that the debounced inputs correctly drive the stopwatch core, and that the resulting 16-bit time values are properly multiplexed to the 7-segment display outputs (seg, an, and dp).
 
 # Input Hardware Debouncing (tb_debouncer)
 <img width="662" height="551" alt="Screenshot 2026-06-30 033207" src="https://github.com/user-attachments/assets/60824553-f971-49f2-9a3b-1b8fe1d3c300" />
@@ -45,16 +45,16 @@ The core logic and peripheral modules have been thoroughly verified via behavior
 
 # Project Structure
 ### Source Files
-* top.v: The top-level wrapper connecting the debouncers, core logic, and display drivers.
-* stopwatch.v: The core behavioral logic managing the timer states, BCD counting, and preset loading.
-* debouncer.v: A 1,000,000-cycle hardware debouncer to stabilize mechanical button inputs.
-* clkdiv.v: A custom clock divider to slow the 100 MHz system clock for display multiplexing.
-* hexto7segment.v: A combinational decoder translating 4-bit hex values to 7-segment cathode signals.
-* Basys3_Master.xdc: The physical constraints file mapping Verilog ports to the FPGA pins.
+* `top.v`: The top-level wrapper connecting the debouncers, core logic, and display drivers.
+* `stopwatch.v`: The core behavioral logic managing the timer states, BCD counting, and preset loading.
+* `debouncer.v`: A 1,000,000-cycle hardware debouncer to stabilize mechanical button inputs.
+* `clkdiv.v`: A custom clock divider to slow the 100 MHz system clock for display multiplexing.
+* `hexto7segment.v`: A combinational decoder translating 4-bit hex values to 7-segment cathode signals.
+* `Basys3_Master.xdc`: The physical constraints file mapping Verilog ports to the FPGA pins.
 ### Simulation Files
-* tb_top.v: Top-level system testbench.
-* tb_stopwatch.v: Core stopwatch logic testbench.
-* tb_debouncer.v: Button debouncer testbench.  
+* `tb_top.v`: Top-level system testbench.
+* `tb_stopwatch.v`: Core stopwatch logic testbench.
+* `tb_debouncer.v`: Button debouncer testbench.  
 
 # Development Environment
 * Synthesis, Simulation, and Programming: Xilinx Vivado 2026.1
